@@ -83,7 +83,7 @@ class HaSceneDashboard extends LitElement {
                         .scene=${scene}
                         icon="hass:play"
                         title="${this.hass.localize(
-                          "ui.panel.config.scene.picker.activate_scene"
+                          "ui.panel.config.scene.picker.trigger_script"
                         )}"
                         @click=${this._activateScene}
                       ></paper-icon-button>
