@@ -69,6 +69,7 @@ export const FIXED_DEVICE_CLASS_ICONS = {
 
 /** Domains that have a state card. */
 export const DOMAINS_WITH_CARD = [
+  "analog_output",
   "climate",
   "cover",
   "configurator",
@@ -86,6 +87,7 @@ export const DOMAINS_WITH_CARD = [
 
 /** Domains with separate more info dialog. */
 export const DOMAINS_WITH_MORE_INFO = [
+  "analog_output",
   "alarm_control_panel",
   "automation",
   "camera",
@@ -121,7 +123,7 @@ export const DOMAINS_HIDE_MORE_INFO = [
 export const DOMAINS_MORE_INFO_NO_HISTORY = ["camera", "configurator", "scene"];
 
 /** States that we consider "off". */
-export const STATES_OFF = ["closed", "locked", "off"];
+export const STATES_OFF = ["closed", "locked", "off", "0", "0.0"];
 
 /** Binary States */
 export const BINARY_STATE_ON = "on";
@@ -129,6 +131,7 @@ export const BINARY_STATE_OFF = "off";
 
 /** Domains where we allow toggle in Lovelace. */
 export const DOMAINS_TOGGLE = new Set([
+  "analog_output",
   "fan",
   "input_boolean",
   "light",
