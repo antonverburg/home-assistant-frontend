@@ -240,6 +240,78 @@ export interface HomeAssistant {
   ): Promise<LocalizeFunc>;
 }
 
+export type LightEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    min_mireds: number;
+    max_mireds: number;
+    friendly_name: string;
+    brightness: number;
+    hs_color: number[];
+    color_temp: number;
+    white_value: number;
+    effect?: string;
+    effect_list: string[] | null;
+  };
+};
+
+export type AnalogOutputEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    mode: string;
+    step: number;
+    min: number;
+    max: number;
+  };
+};
+
+export type GroupEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    entity_id: string[];
+    order: number;
+    auto?: boolean;
+    view?: boolean;
+    control?: "hidden";
+  };
+};
+
+export type CameraEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    model_name: string;
+    access_token: string;
+    brand: string;
+    motion_detection: boolean;
+  };
+};
+
+export type MediaEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    media_duration: number;
+    media_position: number;
+    media_title: string;
+    icon?: string;
+    entity_picture_local?: string;
+    is_volume_muted?: boolean;
+    volume_level?: number;
+    source?: string;
+    source_list?: string[];
+    sound_mode?: string;
+    sound_mode_list?: string[];
+  };
+  state:
+    | "playing"
+    | "paused"
+    | "idle"
+    | "off"
+    | "on"
+    | "unavailable"
+    | "unknown";
+};
+
+export type InputSelectEntity = HassEntityBase & {
+  attributes: HassEntityAttributeBase & {
+    options: string[];
+  };
+};
+
 export interface Route {
   prefix: string;
   path: string;
