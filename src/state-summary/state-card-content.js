@@ -19,6 +19,7 @@ import "./state-card-timer";
 import "./state-card-toggle";
 import "./state-card-vacuum";
 import "./state-card-water_heater";
+import "./state-card-weblink";
 
 class StateCardContent extends PolymerElement {
   static get properties() {
